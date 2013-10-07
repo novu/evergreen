@@ -24,7 +24,7 @@ module Evergreen
     end
 
     def specs
-      Dir.glob(File.join(root, Evergreen.spec_dir, config.spec_pattern)).map do |path|
+      Dir.glob(File.join(root, Evergreen.spec_dir, Evergreen.spec_pattern)).map do |path|
         Spec.new(self, path.gsub(File.join(root, Evergreen.spec_dir, ''), ''))
       end
     end
